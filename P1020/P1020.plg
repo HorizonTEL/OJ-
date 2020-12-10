@@ -1,0 +1,40 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: P1020 - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\Users\ADMINI~1\AppData\Local\Temp\RSP1F31.tmp" with contents
+[
+/nologo /MLd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_CONSOLE" /D "_MBCS" /Fp"Debug/P1020.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"F:\VC6.0green\MyProjects\P1020\P1020.c"
+]
+Creating command line "cl.exe @C:\Users\ADMINI~1\AppData\Local\Temp\RSP1F31.tmp" 
+Creating temporary file "C:\Users\ADMINI~1\AppData\Local\Temp\RSP1F32.tmp" with contents
+[
+kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:console /incremental:yes /pdb:"Debug/P1020.pdb" /debug /machine:I386 /out:"Debug/P1020.exe" /pdbtype:sept 
+.\Debug\P1020.obj
+]
+Creating command line "link.exe @C:\Users\ADMINI~1\AppData\Local\Temp\RSP1F32.tmp"
+<h3>Output Window</h3>
+Compiling...
+P1020.c
+F:\VC6.0green\MyProjects\P1020\P1020.c(5) : warning C4101: 'p' : unreferenced local variable
+F:\VC6.0green\MyProjects\P1020\P1020.c(7) : warning C4101: 'b' : unreferenced local variable
+F:\VC6.0green\MyProjects\P1020\P1020.c(8) : warning C4101: 'c' : unreferenced local variable
+F:\VC6.0green\MyProjects\P1020\P1020.c(5) : warning C4101: 'max' : unreferenced local variable
+F:\VC6.0green\MyProjects\P1020\P1020.c(5) : warning C4101: 'i' : unreferenced local variable
+F:\VC6.0green\MyProjects\P1020\P1020.c(5) : warning C4101: 'min' : unreferenced local variable
+F:\VC6.0green\MyProjects\P1020\P1020.c(5) : warning C4101: 'm' : unreferenced local variable
+F:\VC6.0green\MyProjects\P1020\P1020.c(5) : warning C4101: 'n' : unreferenced local variable
+Linking...
+
+
+
+<h3>Results</h3>
+P1020.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>
