@@ -1,73 +1,53 @@
 #include<stdio.h>
-#include<string.h>
-#include<stdlib.h>
-void reverse(char *a)
-{
-	char temp;
-	int i, n = strlen(a);
-	for (i = 0;i < n / 2;i++)
-	{
-		temp = a[i];
-		a[i] = a[i + 1];
-		a[i + 1] = temp;
-	}
-}
 int main()
 {
-	int i, j, n, m, y, temp;
-	double re;
-	char a[1000000];
-	char b[1000000];
-	while (scanf("%s %d", a, &y) != EOF)
+	int i, j;
+	long long int b;
+	double a;
+	while(scanf("%lf %lld", &a, &b) != EOF)
 	{
-		if (y == 0)
-			printf("1.000*10^0");
+		if(b == 0)
+			printf("1.000*10^0\n");
 		else
 		{
-			strcpy(b, a);
-			reverse(a);
-			reverse(b);
-			for (;y > 1;y--)
-			{ 
-				char c[1000000] = { '0' };
-				n = strlen(a);
-				m = strlen(b);
-				for (i = 0;i < n;i++)
-				{
-					for (j = 0;j < m;j++)
-					{
-						if (j == 0)
-						{
-							if (c[i + j] >= '0' && c[i + j] <= '9')
-								temp = (a[i] - '0') * (b[j] - '0') + (c[i + j] - '0');
-							else
-								temp = (a[i] - '0') * (b[j] - '0');
-							c[i + j] = temp % 10 + '0';
-							temp /= 10;
-						}
-						else
-						{
-							if (c[i + j] >= '0' && c[i + j] <= '9')
-								temp = (a[i] - '0') * (b[j] - '0') + (c[i + j] - '0') + temp;
-							else
-								temp = (a[i] - '0') * (b[j] - '0') + temp;
-							c[i + j] = temp % 10 + '0';
-							temp /= 10;
-						}
-					}
-					if (temp != 0)
-					{
-						if (c[i + j] >= '0' && c[i + j] <= '9')
-							c[i + j] += temp;
-						else
-							c[i + j] = temp + '0';
-					}
-				}
-				strcpy(b, c);
+			double temp = 1.0;
+			long long int n = 0;
+			while(a / 10 > 1)
+			{
+				n += 1;
+				a /= 10.0;
 			}
-			reverse(b);
-			re = (b[0] - '0') + (b[1] - '0') * 0.1 + (b[2] - '0') * 0.01 + (b[3] - '0') * 0.001 + (b[4] - '0') / 5 * 0.0001;
-			printf("%lf*10^%d\n", re,strlen(b) - 1);
+			n *= b;
+			while(b > 1)
+			{
+				if(b % 2)
+				{
+					temp *= a;
+					while(temp / 10 > 1)
+					{
+						n += 1;
+						temp /= 10.0;
+					}
+					b -= 1;
+				}
+				else
+				{
+					a *= a;
+					while(a / 10 > 1)
+					{
+						n += (b/2);
+						a /= 10.0;
+					}
+					b /= 2;
+				}
+			}
+			a *= temp;
+			while(a / 10 > 1)
+			{
+				n += 1;
+				a /= 10.0;
+			}
+			printf("%.3lf*10^%lld\n", a ,n);
 		}
 	}
 	return 0;
